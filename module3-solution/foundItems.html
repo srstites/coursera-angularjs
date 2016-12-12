@@ -1,0 +1,18 @@
+<h3 ng-if="list.errorMessage.length > 0">{{list.errorMessage}}</h3>
+<table class="table table-striped" ng-if="list.itemList.length > 0">
+  <thead>
+  <tr>
+    <th>Short Name</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in list.itemList">
+    <td>{{item.short_name}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.description}}</td>
+    <td><button ng-click="list.onRemove({index: $index});">Don't Want This One!</button></td>
+  </tr>
+  </tbody>
+</table>
